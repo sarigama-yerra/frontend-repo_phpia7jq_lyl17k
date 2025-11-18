@@ -1,73 +1,61 @@
-function App() {
+import React from 'react'
+import Hero from './components/Hero'
+import TrustIndicators from './components/TrustIndicators'
+import ProblemSection from './components/ProblemSection'
+import SolutionOverview from './components/SolutionOverview'
+import EquipmentFleet from './components/EquipmentFleet'
+import TechnicalArchitecture from './components/TechnicalArchitecture'
+import ManagementSoftware from './components/ManagementSoftware'
+import BusinessIntelligence from './components/BusinessIntelligence'
+import BusinessModel from './components/BusinessModel'
+import OperationsSLA from './components/OperationsSLA'
+import Training from './components/Training'
+import SecurityLGPD from './components/SecurityLGPD'
+import Sustainability from './components/Sustainability'
+import Governance from './components/Governance'
+import ImplementationProcess from './components/ImplementationProcess'
+import Differentials from './components/Differentials'
+import AboutUs from './components/AboutUs'
+import SocialProof from './components/SocialProof'
+import FAQ from './components/FAQ'
+import NextSteps from './components/NextSteps'
+import FinalCTA from './components/FinalCTA'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import { MessageCircle } from 'lucide-react'
+
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="bg-white text-slate-900">
+      {/* Floating Action Buttons */}
+      <a href="#contato" className="fixed bottom-24 right-6 z-50 rounded-full bg-emerald-600 px-5 py-3 text-white shadow-lg hover:bg-emerald-500">Solicitar Proposta</a>
+      <a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg hover:bg-emerald-400">
+        <MessageCircle className="h-6 w-6" />
+      </a>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
-        </div>
-      </div>
+      <Hero />
+      <TrustIndicators />
+      <ProblemSection />
+      <SolutionOverview />
+      <EquipmentFleet />
+      <TechnicalArchitecture />
+      <ManagementSoftware />
+      <BusinessIntelligence />
+      <BusinessModel />
+      <OperationsSLA />
+      <Training />
+      <SecurityLGPD />
+      <Sustainability />
+      <Governance />
+      <ImplementationProcess />
+      <Differentials />
+      <AboutUs />
+      <SocialProof />
+      <FAQ />
+      <NextSteps />
+      <FinalCTA />
+      <Contact />
+      <Footer />
     </div>
   )
 }
-
-export default App
