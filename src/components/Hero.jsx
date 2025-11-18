@@ -1,6 +1,7 @@
 import React from 'react'
 import Spline from '@splinetool/react-spline'
 import { Shield, Printer, LineChart, Leaf } from 'lucide-react'
+import { trackEvent } from '../utils/analytics'
 
 const primary = '#1e3a8a'
 const accent = '#10b981'
@@ -9,7 +10,7 @@ export default function Hero() {
   return (
     <section id="topo" className="relative h-[90vh] w-full overflow-hidden bg-white">
       {/* Spline full-bleed background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden>
         <Spline scene="https://prod.spline.design/WCoEDSwacOpKBjaC/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
@@ -18,7 +19,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[rgba(30,58,138,0.08)] px-4 py-2 text-sm font-medium text-[${primary}] backdrop-blur">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium backdrop-blur" style={{ background: 'rgba(30,58,138,0.08)', color: primary }}>
           <span className="h-2 w-2 rounded-full" style={{ backgroundColor: accent }} />
           Outsourcing de Impressão Inteligente
         </div>
@@ -31,16 +32,16 @@ export default function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="#contato" className="rounded-full px-6 py-3 text-white shadow-lg transition hover:shadow-xl" style={{ backgroundColor: accent }}>Solicitar Proposta</a>
-          <a href="#demo" className="rounded-full border px-6 py-3 text-[${primary}] transition hover:bg-slate-50" style={{ borderColor: primary }}>Agendar Demonstração</a>
+          <a href="#contato" onClick={() => trackEvent('cta_hero_proposta_click')} className="rounded-full px-6 py-3 text-white shadow-lg transition hover:shadow-xl" style={{ backgroundColor: accent }}>Solicitar Proposta</a>
+          <a href="#demo" onClick={() => trackEvent('cta_hero_demo_click')} className="rounded-full border px-6 py-3 transition hover:bg-slate-50" style={{ borderColor: primary, color: primary }}>Agendar Demonstração</a>
         </div>
 
         {/* Floating icons */}
-        <div className="mt-10 grid grid-cols-4 gap-6 text-[${primary}]">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow"><Printer /></div>
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow"><Shield /></div>
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow"><LineChart /></div>
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow"><Leaf /></div>
+        <div className="mt-10 grid grid-cols-4 gap-6" style={{ color: primary }}>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow" aria-hidden><Printer /></div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow" aria-hidden><Shield /></div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow" aria-hidden><LineChart /></div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100/80 shadow" aria-hidden><Leaf /></div>
         </div>
       </div>
     </section>
